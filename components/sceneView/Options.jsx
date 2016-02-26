@@ -18,11 +18,21 @@ Option.propTypes = {
 };
 
 
+function onOptionClicked(index, callback, event) {
+    event.preventDefault();
+    callback(index);
+}
+
 function Options(props) {
     return (
         <ul id='options'>
         {props.options.map((option, index) => (
-            <Option key={index} text={option.text} index={index} onOptionClicked={props.onOptionClicked.bind(undefined, index)} />
+            <Option
+                key={index}
+                text={option.text} 
+                index={index}
+                onOptionClicked={onOptionClicked.bind(undefined, index, props.onOptionClicked)}
+             />
         ))}
         </ul>
     );
