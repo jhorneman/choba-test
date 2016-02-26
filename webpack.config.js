@@ -15,7 +15,8 @@ module.exports = {
                     cacheDirectory: true,
                     presets: ['react', 'es2015']
                 }
-            }
+            },
+            { test: /\.choba$/, loader: 'raw' },
         ]
     },
     resolve: {

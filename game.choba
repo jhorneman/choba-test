@@ -1,0 +1,6 @@
+{scene start}
+{content}
+You are in a mysterious forest.
+{goto northOfForest}Go north.{endGoto}
+{endContent}
+{endScene}

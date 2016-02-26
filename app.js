@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+
 import { buildContext,
          restartGame,
          getRandomInt,
@@ -7,17 +8,14 @@ import { buildContext,
          actionHandlers,
          nullValue,
          getRandomlySelectedItemIndexByTags } from 'choba-engine';
+import parser from './chobaParser';
+
 import SceneView from './components/sceneView/SceneView';
 
+import gameData from './game.choba';
 
-let sceneDescriptions = {
-    start: {
-        content: ["seq",
-            ["text", `You are in a mysterious forest.`],
-            ["addOption", ["text", "Go north."], "goto", "computer_room"]
-        ]
-    },
-};
+
+let sceneDescriptions = parser.parse(gameData);
 
 let context = buildContext({
     initialVars: {},
